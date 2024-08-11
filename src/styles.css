@@ -7,10 +7,39 @@ body {
   color: #ffffff;
 }
 
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Button Style */
+.theme-toggle-btn {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+}
+
+/* App Styles */
 .app {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.app.light-mode .post-input,
+.app.light-mode .input-group input {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+.app.light-mode .post-time,
+.app.light-mode .comments {
+  color: #555;
 }
 
 /* Home Styles */
@@ -18,17 +47,28 @@ body {
   padding: 20px;
 }
 
+/* Post Styles */
 .create-post {
   background-color: #282828;
-  padding: 20px;
+  padding: 24px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.create-post:hover {
-  background-color: #333333;
+.app.light-mode .create-post,
+.app.light-mode .post,
+.app.light-mode .modal-content {
+  background-color: white;
+  color: #000000;
+}
+
+.light-mode .create-post {
+  background-color: white;
+  border: 1px solid #333;
 }
 
 .post-input {
@@ -37,6 +77,12 @@ body {
   background-color: #333;
   border-radius: 4px;
   padding: 10px;
+  margin-top: 16px;
+}
+
+.light-mode .post-input {
+  background-color: white;
+  border: 0.5px solid #8a8a8a;
 }
 
 .chat-icon {
@@ -58,6 +104,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
+  margin-left: auto;
 }
 
 .feed {
@@ -70,6 +117,11 @@ body {
   border-radius: 8px;
   margin-bottom: 20px;
   display: flex;
+}
+
+.light-mode .post {
+  background-color: white;
+  border: 1px solid #2a2a2a;
 }
 
 .avatar {
@@ -117,12 +169,23 @@ body {
   align-items: center;
 }
 
+.outer-post {
+  display: flex;
+}
+
 .modal-content {
   background-color: #282828;
   padding: 20px;
   border-radius: 8px;
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.light-mode .modal-content {
+  background-color: white;
+  border: 1px solid #282828;
 }
 
 .modal-content h2,
@@ -150,6 +213,11 @@ body {
   color: #fff;
 }
 
+.light-mode .input-group input {
+  background-color: white;
+  border: 1px solid #333;
+}
+
 .submit-btn {
   background-color: #4a90e2;
   color: #fff;
@@ -158,14 +226,68 @@ body {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  margin-top: 10px;
 }
 
 .auth-switch {
   margin-top: 15px;
   text-align: center;
+  cursor: pointer;
 }
 
 .auth-switch a {
   color: #4a90e2;
   text-decoration: none;
+}
+
+.modal-content {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Close Icon Styles */
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #131319;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light-mode .close-icon {
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading {
+  color: #6b6c70;
+  font-weight: 500;
+}
+
+.sub-heading {
+  color: white;
+  font-weight: 600;
+}
+
+.light-mode .heading {
+  color: #000000;
+}
+
+.light-mode .sub-heading {
+  color: #000000;
 }
